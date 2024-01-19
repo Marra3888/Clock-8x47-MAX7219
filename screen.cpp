@@ -33,6 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // цифровой 6x8 моно
 #define BIG_COLON   0xa
 #define BIG_COLON1  0xb
+#define SPACE       0xc
 const byte font_digit_6x8[] PROGMEM = 
 {
   0x7e, 0xff, 0x81, 0x81, 0xff, 0x7e,  //'0' 0
@@ -46,7 +47,8 @@ const byte font_digit_6x8[] PROGMEM =
   0x76, 0xff, 0x89, 0x89, 0xff, 0x76,  //'8' 8
   0x0e, 0x9f, 0x91, 0xd1, 0x7f, 0x3e,  //'9' 9
   0x62, 0x62, 0x00, 0x00, 0x00, 0x00,  //':' 0xa
-  0x46, 0x46, 0x00, 0x00, 0x00, 0x00   //':' 0xb
+  0x46, 0x46, 0x00, 0x00, 0x00, 0x00,   //':' 0xb
+  0, 0, 0, 0, 0, 0  //пробел 0x0с
 };
 
 // цифровой 4x5 моно
@@ -416,7 +418,7 @@ void DisplayTime(int hours, int mins, int secs, bool alarm, byte scroll_mode, bo
   CopySymbol(sprite_buffer, font_digit_6x8, mins % 10, POS_DIGIT4, 0, 6, 8);
 #endif  
 #ifdef Normal_font_second  
-  CopySymbol(sprite_buffer, font_digit_6x8, BIG_COLON, POS_COLON1, 0, 6, 8, 2);
+  CopySymbol(sprite_buffer, font_digit_6x8, SPACE, POS_COLON1, 0, 6, 8, 2);
   CopySymbol(sprite_buffer, font_digit_6x8, secs / 10, POS_DIGIT5, 0, 6, 8);
   CopySymbol(sprite_buffer, font_digit_6x8, secs % 10, POS_DIGIT6, 0, 6, 8);
 #endif  
