@@ -332,8 +332,8 @@ void ScrollVertical(byte* buffer, byte from, byte to, boolean fUp)
 
 //////////////////////////////////////////////////////////////////////////////
 //позиции цифр часов
-// #define Normal_font_start
-// #define Normal_font_end
+// #define Normal_font_hour_minute
+// #define Normal_font_second
 // #define Little_Font_Secs
 // #define Little6x5_Font_Secs
 // #define Little6x6_Font_Secs
